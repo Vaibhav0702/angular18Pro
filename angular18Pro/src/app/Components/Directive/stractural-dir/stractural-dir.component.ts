@@ -35,7 +35,7 @@ export class StracturalDirComponent {
   ]
 
   naviagteToAttribute() {
-    this.router.navigateByUrl("attributedirective")
+    this.router.navigateByUrl("attribute")
   }
   showDiv1() {
     this.isDiv1Visiable = true;
