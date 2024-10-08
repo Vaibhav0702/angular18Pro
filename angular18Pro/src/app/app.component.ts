@@ -6,7 +6,7 @@ import { EmployeeListComponent } from './Components/employee-list/employee-list.
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet , AddEmployeeComponent, EmployeeListComponent],
+  imports: [RouterOutlet , AddEmployeeComponent, EmployeeListComponent], //import allo components directly here
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
