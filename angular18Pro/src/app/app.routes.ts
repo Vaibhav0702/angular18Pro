@@ -7,6 +7,8 @@ import { AttributeDirectiveComponent } from './Components/Directive/attribute-di
 import { IfelseComponent } from './Components/Control-Flow/ifelse/ifelse.component';
 import { ForComponent } from './Components/Control-Flow/for/for.component';
 import { PipeComponent } from './Components/Pipes/pipe/pipe.component';
+import { TemplateComponent } from './Components/forms/template/template.component';
+import { ReactiveComponent } from './Components/forms/reactive/reactive.component';
 
 
 export const routes: Routes = [
@@ -41,5 +43,13 @@ export const routes: Routes = [
   {
     path : 'pipe',
     component : PipeComponent
+  },
+  {
+    path : 'template',
+    component : TemplateComponent
+  },
+  {
+    path : 'reactive',
+    component : ReactiveComponent
   }
 ];
