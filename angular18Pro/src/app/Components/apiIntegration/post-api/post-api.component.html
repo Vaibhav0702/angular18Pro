@@ -1,8 +1,8 @@
-<!-- <app-alert  [alertType]="'Warning'" [message]="'Welcome To Post Page'"></app-alert>
+<app-alert  [alertType]="'Warning'" [message]="'Welcome To Post Page'"></app-alert>
  <br>
  <app-alert  [alertType]="'Error'" [message]="'Some error Occoured'"></app-alert>
 
- <app-my-button (onBtnClick)="getData($event)" [btnClass]="'btn btn-success'" [btnText]="'Save Record'"></app-my-button> -->
+ <app-button (onBtnClick)="getData($event)" [btnClass]="'btn btn-success'" [btnText]="'Save Record'"></app-button>
 
 <div class="row pt-2">
     <div class="col-8">
@@ -30,8 +30,8 @@
                                     <td>{{item.departmentLogo}}</td>
                                     <td>
                                         <button class="btn btn-primary mx-2" (click)="onEdit(item)">Edit</button>
-                                        <button class="btn btn-danger mx-2" (click)="onDelete(item.departmentId)">Delete</button>
-                                        <!-- <app-my-button (onBtnClick)="onDelete(item.departmentId)" [btnClass]="'btn btn-danger'" [btnText]="'Delete'"></app-my-button> -->
+                                        <!-- <button class="btn btn-danger mx-2" (click)="onDelete(item.departmentId)">Delete</button> -->
+                                        <app-button (onBtnClick)="onDelete(item.departmentId)" [btnClass]="'btn btn-danger'" [btnText]="'Delete'"></app-button>
 
 
                                     </td>
