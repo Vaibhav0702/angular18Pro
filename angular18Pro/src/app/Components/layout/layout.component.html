@@ -58,11 +58,11 @@
         </li>
       </ul>
       <form class="d-flex">
-        <!-- <select  [(ngModel)]="selectedRole" name="selectedRole" (ngModelChange)="onRoleChnage($event)">
+        <select  [(ngModel)]="selectedRole" name="selectedRole" (ngModelChange)="onRoleChnage($event)">
           <option value="">Select Role</option>
           <option value="user">User Role</option>
           <option value="guest">Guest Role</option>
-        </select> -->
+        </select>
          <span class="text-white m-2">{{loggedUserData?.emailId}}</span>
          <button class="btn btn-primary" type="button" (click)="logoff()">LogOff</button>
       </form>

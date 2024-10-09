@@ -31,7 +31,7 @@ export class LayoutComponent {
 
 
   onRoleChnage(role: string) {
-    // this.deptService.onRoleChange$.next(role)
-    // this.deptService.role$.next(role)
+    this.deptService.onRoleChange$.next(role)
+    this.deptService.role$.next(role)
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DepartmentService } from '../../../Service/department.service';
 
 @Component({
   selector: 'app-ifelse',
@@ -16,8 +17,17 @@ export class IfelseComponent {
   num2: string = '';
   selectedStatus: string = '';
 
-  constructor() {
+  currentRole: string = '';
 
+  constructor(private deptService: DepartmentService) {
+    this.deptService.onRoleChange$.subscribe((role:string)=>{
+      console.log("role Subject" , role)
+      // this.currentRole = role
+    })
+    this.deptService.role$.subscribe((role:string)=>{
+       console.log("role BehaviorSubject" , role)
+       this.currentRole = role
+    })
   }
 
   showDiv1() {

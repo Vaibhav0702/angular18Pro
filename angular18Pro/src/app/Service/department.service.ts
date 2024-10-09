@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Constant } from '../Constant/constant';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,13 @@ export class DepartmentService {
 
 
   // apiUrl: string = "https://projectapi.gerasim.in/api/Complaint/"
+
+
+
+  public onRoleChange$ : Subject<string> = new Subject<string>;
+
+  public role$ : BehaviorSubject<string> = new BehaviorSubject<string>("");
+
 
   constructor(private http: HttpClient) { }
 
