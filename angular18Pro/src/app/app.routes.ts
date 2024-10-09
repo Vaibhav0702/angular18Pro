@@ -17,6 +17,7 @@ import { NgContainerComponent } from './Components/Directive/ng-container/ng-con
 import { ViewChildComponent } from './Components/Decorators/view-child/view-child.component';
 import { LoginComponent } from './Components/login/login.component';
 import { LayoutComponent } from './Components/layout/layout.component';
+import { authGuard } from './Service/auth.guard';
 
 
 export const routes: Routes = [
@@ -39,7 +40,8 @@ export const routes: Routes = [
       },
       {
         path : 'data-binding',
-        component : DataBindingComponent
+        component : DataBindingComponent,
+        canActivate : [authGuard]
       },
       {
         path : 'emp-list',
