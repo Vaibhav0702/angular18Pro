@@ -2,6 +2,7 @@ import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DepartmentService } from '../../../Service/department.service';
 
 @Component({
   selector: 'app-post-api',
@@ -22,8 +23,9 @@ export class PostApiComponent {
 
   http = inject(HttpClient);   // new way to use httpclient except Dependency Injection
 
-  constructor() {
-
+  constructor(private deptSrv : DepartmentService) {
+       const result = this.deptSrv.addTwoNo(20,52)
+       console.warn(result)
   }
 
   ngOnInit(): void {
@@ -58,25 +60,25 @@ export class PostApiComponent {
   }
 
   onSave() {
-    // this.deptSrv.saveNewDept(this.deptObj).subscribe((res: any) => {
-    //   if (res.result) {
-    //     alert("Department Created Success");
-    //     this.getDepartment();
-    //   } else {
-    //     alert(res.message)
-    //   }
-    // })
-
-
-    this.http.post("https://projectapi.gerasim.in/api/Complaint/AddNewDepartment" , this.deptObj).subscribe((res :any)=>{
-          if(res.result){
-             alert("Department Created Successfully");
-             this.getDepartment();
-          }
-          else{
-             alert(res.message)
-          }
+    this.deptSrv.saveNewDept(this.deptObj).subscribe((res: any) => {
+      if (res.result) {
+        alert("Department Created Success");
+        this.getDepartment();
+      } else {
+        alert(res.message)
+      }
     })
+
+
+    // this.http.post("https://projectapi.gerasim.in/api/Complaint/AddNewDepartment" , this.deptObj).subscribe((res :any)=>{
+    //       if(res.result){
+    //          alert("Department Created Successfully");
+    //          this.getDepartment();
+    //       }
+    //       else{
+    //          alert(res.message)
+    //       }
+    // })
 
 
   }
@@ -96,14 +98,13 @@ export class PostApiComponent {
 
 
   getDepartment() {
-    // this.deptSrv.getAllDept().subscribe((res: any) => {
-    //   this.deptList = res.data;
+    this.deptSrv.getAllDept().subscribe((res: any) => {
+      this.deptList = res.data;
+    })
+
+    // this.http.get("https://projectapi.gerasim.in/api/Complaint/GetParentDepartment").subscribe((res: any) => {
+    //     this.deptList = res.data;
     // })
-
-    this.http.get("https://projectapi.gerasim.in/api/Complaint/GetParentDepartment").subscribe((res: any) => {
-        this.deptList = res.data;
-      })
-
 
   }
 
