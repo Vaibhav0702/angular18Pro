@@ -15,71 +15,89 @@ import { LifeCycleEventComponent } from './Components/life-cycle-event/life-cycl
 import { TemplateDirComponent } from './Components/Directive/template/template.component';
 import { NgContainerComponent } from './Components/Directive/ng-container/ng-container.component';
 import { ViewChildComponent } from './Components/Decorators/view-child/view-child.component';
+import { LoginComponent } from './Components/login/login.component';
+import { LayoutComponent } from './Components/layout/layout.component';
 
 
 export const routes: Routes = [
   {
-    path : 'add-emp',
-    component : AddEmployeeComponent
+    path : '',
+    redirectTo : 'login',
+    pathMatch : 'full'
   },
   {
-    path : 'data-binding',
-    component : DataBindingComponent
+    path : 'login',
+    component : LoginComponent
   },
   {
-    path : 'emp-list',
-    component : EmployeeListComponent
+    path : '',
+    component : LayoutComponent,
+    children : [
+      {
+        path : 'add-emp',
+        component : AddEmployeeComponent
+      },
+      {
+        path : 'data-binding',
+        component : DataBindingComponent
+      },
+      {
+        path : 'emp-list',
+        component : EmployeeListComponent
+      },
+      {
+        path : 'structural',
+        component : StracturalDirComponent
+      },
+      {
+        path : 'attribute',
+        component : AttributeDirectiveComponent
+      },
+      {
+        path : 'if-else',
+        component : IfelseComponent
+      },
+      {
+        path : 'for',
+        component : ForComponent
+      },
+      {
+        path : 'pipe',
+        component : PipeComponent
+      },
+      {
+        path : 'template',
+        component : TemplateComponent
+      },
+      {
+        path : 'reactive',
+        component : ReactiveComponent
+      },
+      {
+        path : 'get-api',
+        component : GetApiComponent
+      },
+      {
+        path : 'post-api',
+        component : PostApiComponent
+      },
+      {
+        path : 'lifeCycle',
+        component : LifeCycleEventComponent
+      },
+      {
+        path : 'ng-template',
+        component : TemplateDirComponent
+      },
+      {
+        path : 'ng-container',
+        component : NgContainerComponent
+      },
+      {
+        path : 'viewChild',
+        component : ViewChildComponent
+      }
+    ]
   },
-  {
-    path : 'structural',
-    component : StracturalDirComponent
-  },
-  {
-    path : 'attribute',
-    component : AttributeDirectiveComponent
-  },
-  {
-    path : 'if-else',
-    component : IfelseComponent
-  },
-  {
-    path : 'for',
-    component : ForComponent
-  },
-  {
-    path : 'pipe',
-    component : PipeComponent
-  },
-  {
-    path : 'template',
-    component : TemplateComponent
-  },
-  {
-    path : 'reactive',
-    component : ReactiveComponent
-  },
-  {
-    path : 'get-api',
-    component : GetApiComponent
-  },
-  {
-    path : 'post-api',
-    component : PostApiComponent
-  },
-  {
-    path : 'lifeCycle',
-    component : LifeCycleEventComponent
-  },
-  {
-    path : 'ng-template',
-    component : TemplateDirComponent
-  },
-  {
-    path : 'ng-container',
-    component : NgContainerComponent
-  },
-  {
-    path : 'viewChild',
-    component : ViewChildComponent
-  }
+
 ];
