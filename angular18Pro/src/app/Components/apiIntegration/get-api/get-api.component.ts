@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AlertComponent } from '../../../reusableComponent/alert/alert.component';
+import { IUser } from '../../../model/interface/IUser';
 
 @Component({
   selector: 'app-get-api',
@@ -11,7 +12,7 @@ import { AlertComponent } from '../../../reusableComponent/alert/alert.component
 })
 export class GetApiComponent {
 
-  userList:  any[] = [];
+  userList:  IUser[] = [];
   alertMsg : string = '';
  customersList : any[] = [];
 

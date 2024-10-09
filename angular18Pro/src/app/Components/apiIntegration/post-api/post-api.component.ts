@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { DepartmentService } from '../../../Service/department.service';
 import { AlertComponent } from '../../../reusableComponent/alert/alert.component';
 import { ButtonComponent } from '../../../reusableComponent/button/button.component';
+import { Department, IDepartmentList } from '../../../model/class/Customer';
 
 @Component({
   selector: 'app-post-api',
@@ -15,13 +16,15 @@ import { ButtonComponent } from '../../../reusableComponent/button/button.compon
 })
 export class PostApiComponent {
 
-  deptObj: any = {
-    "departmentId": 0,
-    "departmentName": "",
-    "departmentLogo": ""
-  }
+  // deptObj: any = {
+  //   "departmentId": 0,
+  //   "departmentName": "",
+  //   "departmentLogo": ""
+  // }
 
-  deptList: any[] = [];
+  deptObj : Department = new Department()
+
+  deptList: IDepartmentList[] = [];
 
   http = inject(HttpClient);   // new way to use httpclient except Dependency Injection
 
@@ -36,8 +39,7 @@ export class PostApiComponent {
 
 
   onEdit(data: any) {
-    // this.deptObj = new Department();
-
+    this.deptObj = new Department();
     this.deptObj = data;
   }
 
